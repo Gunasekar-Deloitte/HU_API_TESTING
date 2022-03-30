@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "f0516e21-d822-4973-89b2-5be1d0c46a5e",
+		"name": "Mini_Assignment1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"UserId 40 contains Id 4\",()=>{\r",
+							"var jsonArrayData = pm.response.json();\r",
+							"var count=0;\r",
+							"var c=jsonArrayData.length;\r",
+							"for(var i=0;i<jsonArrayData.length;i++){\r",
+							"    var id1=jsonArrayData[i].id;\r",
+							"    var userId1=jsonArrayData[i].userId;\r",
+							"    if(jsonArrayData[i].id==40){\r",
+							"        pm.expect(userId1).to.eql(4);\r",
+							"    } \r",
+							"   \r",
+							"}\r",
+							"});\r",
+							"\r",
+							"pm.test(\"All Title are String\",()=>{\r",
+							"var jsonArrayData = pm.response.json();\r",
+							"var count=0;\r",
+							"var c=jsonArrayData.length;\r",
+							"for(var i=0;i<jsonArrayData.length;i++){\r",
+							"    const val=jsonArrayData[i].title;\r",
+							"    if(typeof val==='string'){\r",
+							"        count++;\r",
+							"    }\r",
+							"    \r",
+							"}\r",
+							"if(c==count){\r",
+							"    pm.expect(c).to.eql(count);\r",
+							"}\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\" : \"{{name2}}\",\r\n\"job\"  : \"{{job2}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Data Deleted\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Response time is less than 400ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(400);",
+					"});",
+					" ",
+					" ",
+					"pm.test(\"The endpoint returns the expected status code\",()=>{",
+					"    const codes=[200,201];",
+					"    pm.expect(pm.response.code).to.be.oneOf(codes);",
+					"})"
+				]
+			}
+		}
+	]
+}
