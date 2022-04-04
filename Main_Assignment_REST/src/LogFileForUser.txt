@@ -1,0 +1,138 @@
+Request method:	POST
+Request URI:	https://api-nodejs-todolist.herokuapp.com/user/register
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "password": "A12345677",
+    "name": "vikramramsrssskakakak",
+    "email": "sethuramskssgjhrtjhohjtrjkg3210@gmail.com",
+    "age": 21
+}
+HTTP/1.1 201 Created
+Server: Cowboy
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 381
+Etag: W/"17d-nN6tYjzyjkuO0+ehDfBQqa5xwyc"
+Date: Mon, 04 Apr 2022 07:10:59 GMT
+Via: 1.1 vegur
+Connection: Keep-Alive
+
+{
+    "user": {
+        "age": 21,
+        "_id": "624a9a0385a784001776f8de",
+        "name": "vikramramsrssskakakak",
+        "email": "sethuramskssgjhrtjhohjtrjkg3210@gmail.com",
+        "createdAt": "2022-04-04T07:10:59.232Z",
+        "updatedAt": "2022-04-04T07:10:59.485Z",
+        "__v": 1
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhOWEwMzg1YTc4NDAwMTc3NmY4ZGUiLCJpYXQiOjE2NDkwNTYyNTl9.iExEeGVq8PCn8PtAT3FcTt1cHhK6OjqVkhTBLnFiPgk"
+}
+Request method:	POST
+Request URI:	https://api-nodejs-todolist.herokuapp.com/user/register
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "password": "A12345677",
+    "name": "vikramramsrssskakakak",
+    "email": "sethuramskssgjhrtjhohjtrjkg3210@gmail.com",
+    "age": 21
+}
+HTTP/1.1 400 Bad Request
+Server: Cowboy
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 137
+Etag: W/"89-VuYlacWyeq4WCo2WkLSOJkXER6U"
+Date: Mon, 04 Apr 2022 07:11:01 GMT
+Via: 1.1 vegur
+Connection: Keep-Alive
+
+"E11000 duplicate key error collection: todo-list.users index: email_1 dup key: { email: \"sethuramskssgjhrtjhohjtrjkg3210@gmail.com\" }"
+Request method:	POST
+Request URI:	https://api-nodejs-todolist.herokuapp.com/user/login
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "password": "A12345677",
+    "email": "sethuramskssgjhrtjhohjtrjkg3210@gmail.com"
+}
+HTTP/1.1 200 OK
+Server: Cowboy
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 381
+Etag: W/"17d-W6Qlz9ZYmPFSISbfOPT/2emek7I"
+Date: Mon, 04 Apr 2022 07:11:03 GMT
+Via: 1.1 vegur
+Connection: Keep-Alive
+
+{
+    "user": {
+        "age": 21,
+        "_id": "624a9a0385a784001776f8de",
+        "name": "vikramramsrssskakakak",
+        "email": "sethuramskssgjhrtjhohjtrjkg3210@gmail.com",
+        "createdAt": "2022-04-04T07:10:59.232Z",
+        "updatedAt": "2022-04-04T07:11:03.461Z",
+        "__v": 2
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhOWEwMzg1YTc4NDAwMTc3NmY4ZGUiLCJpYXQiOjE2NDkwNTYyNjN9.nTvxPi9At90Rx_D8aTyr9-7r7j2x45JC9j8MAaAGhG4"
+}
+Request method:	POST
+Request URI:	https://api-nodejs-todolist.herokuapp.com/user/login
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "password": "A1234556",
+    "email": "at@gmail.com"
+}
+HTTP/1.1 400 Bad Request
+Server: Cowboy
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 17
+Etag: W/"11-FSW39B1e9RJGzsBhtJda0RM/BOk"
+Date: Mon, 04 Apr 2022 07:11:05 GMT
+Via: 1.1 vegur
+Connection: Keep-Alive
+
+"Unable to login"
